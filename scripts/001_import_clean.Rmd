@@ -1,0 +1,38 @@
+---
+title: "Import and clean dataset"
+author: "Juan Ospina"
+date: "1/31/2019"
+output: html_document
+---
+
+```{r}
+library(haven) # package to import SPSS files in R. Useful to import SPSS files and export them as csv
+library(magrittr)
+library(tidyverse)
+library(emmeans) # to get adjusted means and to plot the summary statistics of models
+library(kableExtra)
+library(psych)
+```
+
+```{r}
+ds <- read_spss("../data/IV data for Juan.sav")
+```
+
+```{r}
+ds %>% 
+  head %>% 
+  View
+```
+
+
+```{r}
+attr(ds$COND, "label")
+attr(ds$COND, "labels")
+```
+
+```{r}
+attr(ds$GPA_E_R1, "label")
+attr(ds$GPA_E_R1, "labels")
+
+```
+
